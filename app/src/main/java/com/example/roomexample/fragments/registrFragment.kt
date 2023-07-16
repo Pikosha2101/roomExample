@@ -28,7 +28,7 @@ class registrFragment : Fragment(R.layout.registr_fragment) {
         savedInstanceState: Bundle?
     ): View? {
         _binding = RegistrFragmentBinding.inflate(inflater, container, false)
-        return binding.root//super.onCreateView(inflater, container, savedInstanceState)
+        return binding.root
     }
 
     override fun onDestroy() {
