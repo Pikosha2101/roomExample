@@ -17,5 +17,9 @@
         android:id="@+id/registrFragment"
         android:name="com.example.roomexample.fragments.registrFragment"
         android:label="registrFragment"
-        tools:layout="@layout/registr_fragment"/>
+        tools:layout="@layout/registr_fragment">
+        <action
+            android:id="@+id/action_registrFragment_to_authorFragment"
+            app:destination="@id/authorFragment" />
+    </fragment>
 </navigation>

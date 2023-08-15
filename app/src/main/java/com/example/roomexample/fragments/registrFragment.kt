@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.roomexample.R
 import com.example.roomexample.ViewModel.registrViewModel
-import com.example.roomexample.databinding.AuthorFragmentBinding
 import com.example.roomexample.databinding.RegistrFragmentBinding
 
 class registrFragment : Fragment(R.layout.registr_fragment) {
@@ -26,7 +25,7 @@ class registrFragment : Fragment(R.layout.registr_fragment) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = RegistrFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -34,5 +33,11 @@ class registrFragment : Fragment(R.layout.registr_fragment) {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding){
+        backButton.setOnClickListener(){
+            findNavController().navigate(R.id.action_registrFragment_to_authorFragment)
+        }
     }
 }
